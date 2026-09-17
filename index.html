@@ -1,1 +1,344 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manish Marketer | Digital Creator</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header / Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 8%;
+            background-color: #1e293b;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #38bdf8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+            transition: 0.3s;
+        }
+
+        .header-btns {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-youtube {
+            background: #ff0000;
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-instagram:hover, .btn-youtube:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 5rem 1rem;
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 650px;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #f8fafc;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: #1e293b;
+            padding: 2.5rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #334155;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: #38bdf8;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 0.8rem;
+        }
+
+        .service-card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        /* Portfolio / Showcase Section */
+        .portfolio {
+            padding: 4rem 8%;
+            background-color: #1e293b;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .media-card {
+            background-color: #0f172a;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #334155;
+        }
+
+        .media-card img, .media-card iframe {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border: none;
+        }
+
+        .media-info {
+            padding: 1.2rem;
+        }
+
+        .media-info h4 {
+            color: #f8fafc;
+            margin-bottom: 0.4rem;
+        }
+
+        .media-info p {
+            color: #94a3b8;
+            font-size: 0.88rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: #0f172a;
+            border-top: 1px solid #334155;
+            color: #64748b;
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-socials a:hover {
+            color: #38bdf8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="logo">Manish Marketer</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Showcase</a></li>
+            </ul>
+        </nav>
+        <div class="header-btns">
+            <!-- Instagram Link -->
+            <a href="https://instagram.com/manish.xmarketer" target="_blank" class="btn-instagram">
+                <i class="fab fa-instagram"></i> @manish.xmarketer
+            </a>
+            <!-- YouTube Channel Link -->
+            <a href="https://youtube.com/@mindsetarc-z8h" target="_blank" class="btn-youtube">
+                <i class="fab fa-youtube"></i> MindsetArc
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <h1>Hi, I'm <span>Manish Marketer</span></h1>
+        <p>A digital creator helping brands & individuals scale. I specialize in high-converting websites, digital e-books, and engaging video animations.</p>
+    </section>
+
+    <!-- Services Offered -->
+    <section class="services" id="services">
+        <h2 class="section-title">What I Offer</h2>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Custom Websites</h3>
+                <p>Modern, mobile-ready websites designed to build your brand and turn visitors into customers.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-book-open"></i>
+                <h3>E-Books & Guides</h3>
+                <p>Informatative, actionable digital books designed to package your knowledge and generate passive revenue.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-photo-video"></i>
+                <h3>Animations & Visuals</h3>
+                <p>Eye-catching 2D/3D animations, motion graphics, and video content tailored for viral social growth.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Portfolio & Content Showcase Section -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="section-title">Content Showcase & Portfolio</h2>
+        <div class="media-grid">
+
+            <!-- Sample Image Work / Photo -->
+            <div class="media-card">
+                <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Website & Design Work">
+                <div class="media-info">
+                    <h4>Web Development Project</h4>
+                    <p>Clean UI/UX designs optimized for conversions.</p>
+                </div>
+            </div>
+
+            <!-- YouTube Video Sample 1 -->
+            <div class="media-card">
+                <iframe src="https://www.youtube.com/embed/s6SfmVCsIFs" title="Day 88 Discipline" allowfullscreen></iframe>
+                <div class="media-info">
+                    <h4>Mindset & Discipline Content</h4>
+                    <p>Featured short from @mindsetarc-z8h</p>
+                </div>
+            </div>
+
+            <!-- YouTube Video Sample 2 -->
+            <div class="media-card">
+                <iframe src="https://www.youtube.com/embed/tDVCz4pYE2s" title="How I Overcame My Scarcity Mindset" allowfullscreen></iframe>
+                <div class="media-info">
+                    <h4>Overcoming Scarcity Mindset</h4>
+                    <p>Featured short from @mindsetarc-z8h</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Manish Marketer. All rights reserved.</p>
+        <div class="footer-socials">
+            <a href="https://instagram.com/manish.xmarketer" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@mindsetarc-z8h" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>
